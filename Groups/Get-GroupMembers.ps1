@@ -3,7 +3,7 @@ $groupIds = @(
 )
 
 $graphApiEndpoint = 'https://graph.microsoft.com/v1.0/groups'
-$selectAttribs = 'displayName,operatingSystem,managementType,approximateLastSignInDateTime,'
+$selectAttribs = 'displayName,operatingSystem,managementType,approximateLastSignInDateTime'
 $rpt = @()
 foreach ($id in $groupIds) {
     # only process $id if it contains a 1 and only 1 comma in the string.
