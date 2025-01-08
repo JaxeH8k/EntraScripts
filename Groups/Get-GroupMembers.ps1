@@ -30,7 +30,6 @@ foreach ($id in $groupIds) {
             } else {
                 $graphRequestUrl = $null
             }
-
         } while ( $null -notlike $graphRequestUrl)
     }
 }
