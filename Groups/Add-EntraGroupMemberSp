@@ -1,0 +1,17 @@
+<#
+  Note: This is invalid if the group type is Unified Groups as they cannot contain Service Principals.
+  BOOOOO
+#>
+$groupId = '2b46badc-3863-44a6-9ea0-05ff14e1da22'
+$servicePrincipalId = '15b158f3-619b-4ad2-90d3-f12d00447d92'
+
+$graphSplat = @{
+  method = 'Post'
+  uri = "https://graph.microsoft.com/v1.0/groups/{$groupid}/owners/`$ref"
+  body = @{
+    "@odata.id" = "https://graph.microsoft.com/v1.0/servicePrincipals/{$servicePrincipalId}"
+  } | ConvertTo-Json
+  contentType = 'application/json'
+}
+
+$r = Invoke-MgGraphRequest @graphSplat 
